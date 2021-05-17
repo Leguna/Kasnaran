@@ -46,12 +46,9 @@ function addPost(res) {
             <span class="fa fa-star`+((Math.round(res.rating)>3)?` checked`:``)+`"></span>
             <span class="fa fa-star`+((Math.round(res.rating)>4)?` checked`:``)+`"></span>
         </p>
-        <h1 class='post-item__title'><a href='#'>Kenapa Harus Belajar Coding Dari Sekarang?</a></h1>
-        <p class='post-item__description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Aspernatur atque autem culpa laborum odio similique voluptas. A ab animi ducimus earum
-            explicabo hic molestias repudiandae sunt. Consectetur consequuntur dolorum excepturi, fugit,
-            minus nemo non quae quaerat quod recusandae reprehenderit totam, unde. Aliquid autem
-            doloremque impedit quod tempora tenetur totam vero.</p>
+        <h1 class='post-item__title'><a href='#'>`+res.name+`</a></h1>
+        <h1 class='post-item__subtitle'><a href='#'>`+res.city+`</a></h1>
+        <p class='post-item__description'>`+res.description+`</p>
     </div>
 </article>`;
     return card;
@@ -70,3 +67,39 @@ $('.post-item').mouseleave(function () {
         scale: 1
       });
 });
+
+
+// Hero
+
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml14 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+var textWrapper2 = document.querySelector('.ml3');
+textWrapper2.innerHTML = textWrapper2.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: false})
+  .add({
+    targets: '.ml14 .line',
+    scaleX: [0,1],
+    opacity: [0.5,1],
+    easing: "easeInOutExpo",
+    duration: 900
+  }).add({
+    targets: '.ml14 .letter',
+    opacity: [0,1],
+    translateX: [40,0],
+    translateZ: 0,
+    scaleX: [0.3, 1],
+    easing: "easeOutExpo",
+    duration: 800,
+    offset: '-=600',
+    delay: (el, i) => 150 + 25 * i
+  }).add({
+    targets: '.ml3 .letter',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 600,
+    delay: (el, i) => 50 * (i+1)
+  });
+ 

@@ -150,8 +150,11 @@ body {
  */
 
 .hero {
+    color: white;
     display: flex;
     align-items: center;
+    align-content: center;
+    align-self: center;
     min-height: 380px;
     width: 100%;
     text-align: center;
@@ -161,7 +164,7 @@ body {
 
     .hero__inner {
         margin: 0 auto;
-        max-width: 800px;
+        max-width: 900;
     }
 
     .hero__title {
@@ -186,14 +189,6 @@ body {
 main {
     width: 100%;
     margin: 0 auto;
-}
-
-/*
- * content
- */
-
-.posts {
-    padding: 32px;
 }
 
 /*
@@ -249,19 +244,19 @@ main {
 }
 
 /*
- * latest
+ * post
  */
+
+.posts {
+    padding: 32px 16px;
+    width: 100%;
+    text-align: center;
+}
 
 .posts__header {
     text-align: center;
     color: $color2;
     padding: 32px 0px 0px 32px;
-}
-
-.posts {
-    width: 100%;
-    margin: 0px auto;
-    text-align: center;
 }
 
 .posts__label {
@@ -278,14 +273,6 @@ main {
 
 .checked {
     color: orange;
-}
-
-/*
- * post
- */
-
-.posts {
-    text-align: left;
 }
 
 /*
@@ -310,7 +297,8 @@ main {
 }
 
 .post-item__date {
-    font-size: 10px;
+    font-size: 12px;
+    letter-spacing: 8px;
     text-transform: uppercase;
     color: white;
 }
@@ -327,13 +315,31 @@ main {
     transition: 0.3s opacity;
 }
 
-.post-item__title:hover {
+.post-item__subtitle {
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: 12px;
+    transition: 0.3s opacity;
+}
+
+.post-item__title:hover .post-item__subtitle:hover {
     opacity: 0.5;
 }
 
-.post-item__title a {
-    text-decoration: none;
-    color: inherit;
+.post-item__subtitle {
+    a {
+        text-decoration: none;
+        color: rgb(230, 230, 230);
+    }
+
+}
+
+.post-item__title {
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
 }
 
 .post-item__description {
@@ -391,4 +397,43 @@ footer a {
     padding: 1.3em;
     text-decoration: none;
     color: #fff
+}
+
+
+
+// ANIMATION
+
+.ml14 {
+    font-weight: 200;
+    font-size: 3.2em;
+}
+
+.ml14 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.1em;
+    padding-right: 0.05em;
+    padding-bottom: 0.15em;
+}
+
+.ml14 .line {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    transform-origin: 100% 100%;
+    bottom: 0;
+}
+
+.ml14 .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+.ml3 {
+    padding-top: 8px;
+    font-weight: 200;
+    font-size: 1.6em;
 }
