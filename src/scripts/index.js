@@ -1,6 +1,7 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../styles/responsive.css';
+
 import anime from 'animejs/lib/anime.es.js';
 import data from '../DATA.json'
 var $ = require( "jquery" );
