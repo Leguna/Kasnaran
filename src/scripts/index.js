@@ -37,9 +37,9 @@ function addPost(res) {
     card +=  `
     <article class='post-item'>
     <img class='post-item__thumbnail' src='`+res.pictureId+`'
-        alt='`+res.name+`'>
+        alt='Gambar `+res.name+`'>
     <div class='post-item__content'>
-        <p class='post-item__date'>
+        <p tabindex='0' class='post-item__date'>
             <span class="fa fa-star`+((Math.round(res.rating)>0)?` checked`:``)+`"></span>
             <span class="fa fa-star`+((Math.round(res.rating)>1)?` checked`:``)+`"></span>
             <span class="fa fa-star`+((Math.round(res.rating)>2)?` checked`:``)+`"></span>
@@ -48,7 +48,7 @@ function addPost(res) {
         </p>
         <h1 class='post-item__title'><a href='#'>`+res.name+`</a></h1>
         <h1 class='post-item__subtitle'><a href='#'>`+res.city+`</a></h1>
-        <p class='post-item__description'>`+res.description+`</p>
+        <p tabindex='0' class='post-item__description'>`+res.description.slice(0, 500)+(res.description.length>500?'...':'')+`</p>
     </div>
 </article>`;
     return card;
@@ -78,8 +78,8 @@ textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='let
 var textWrapper2 = document.querySelector('.ml3');
 textWrapper2.innerHTML = textWrapper2.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-anime.timeline({loop: false})
-  .add({
+var TLControl = anime.timeline({loop: false});
+TLControl.add({
     targets: '.ml14 .line',
     scaleX: [0,1],
     opacity: [0.5,1],
@@ -102,4 +102,9 @@ anime.timeline({loop: false})
     duration: 600,
     delay: (el, i) => 50 * (i+1)
   });
- 
+
+  
+$('.hero').mousedown(function () { 
+    console.log('Restart');
+    TLControl.restart();
+});

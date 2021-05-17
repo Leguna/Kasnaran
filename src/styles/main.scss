@@ -1,11 +1,4 @@
-$primaryColor: #363062;
-
-$color1: #363062;
-$color2: #4d4c7d;
-$color3: #827397;
-$color4: #d8b9c3;
-
-
+@import 'MyStyle';
 
 html body {
     padding: 0px;
@@ -82,7 +75,6 @@ body {
 }
 
 .header__inner {
-    width: 100%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -97,13 +89,14 @@ body {
 }
 
 .header__menu {
+    background-color: $color1;
     font-size: 32px;
-    margin: 10px auto;
+    padding: 0.2em;
     display: block;
-    width: 30px;
+    width: 100%;
+    align-items: center;
     color: white;
 }
-
 
 /*
  * Top level navigation
@@ -164,6 +157,7 @@ body {
 
     .hero__inner {
         margin: 0 auto;
+        padding: 2em;
         max-width: 900;
     }
 
@@ -248,15 +242,14 @@ main {
  */
 
 .posts {
-    padding: 32px 16px;
-    width: 100%;
+    padding: 0px 16px 16px 16px;
     text-align: center;
 }
 
 .posts__header {
     text-align: center;
     color: $color2;
-    padding: 32px 0px 0px 32px;
+    padding: 32px;
 }
 
 .posts__label {
@@ -296,9 +289,9 @@ main {
     width: 100%;
 }
 
+//Rating
 .post-item__date {
     font-size: 12px;
-    letter-spacing: 8px;
     text-transform: uppercase;
     color: white;
 }
@@ -372,34 +365,20 @@ footer {
 
     .child .child2 {
         display: inline-flex;
-        margin-left: 1px;
+        margin: 0px;
+        padding: 0px;
     }
 
     .child2 {
         margin-left: 4px;
         color: rgb(202, 202, 202);
+
+        a {
+            color: rgb(202, 202, 202);
+            text-decoration: none;
+        }
     }
 }
-
-footer ul {
-    margin: 0 auto;
-    display: inline-block;
-}
-
-footer li {
-    display: inline-block;
-    margin: 0 1em;
-    font-size: 14px;
-}
-
-footer a {
-    display: inline-block;
-    padding: 1.3em;
-    text-decoration: none;
-    color: #fff
-}
-
-
 
 // ANIMATION
 

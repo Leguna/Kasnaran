@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Kasnaran | Everybody can eat. 🍩</title>
 </head>
@@ -15,76 +16,51 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <h1 class="header__title">
+            <h1 tabindex="0" class="header__title">
                 Kasnaran
-            </h1>
+            </h1> <a id="menu" class="header__menu">☰</a>
+
         </div>
-        <a id="menu" class="header__menu">☰</a>
     </header>
 
     <nav id="drawer" class="nav">
         <ul class="nav__list">
             <!-- <li class="nav__item"><a class="active" href="/">Kasnaran</a></li> -->
-            <li class="nav__item"><a href="/">Home</a></li>
-            <li class="nav__item"><a href="#">Favorites</a></li>
-            <li class="nav__item"><a href="https://www.linkedin.com/in/tuflihun/">About Us</a></li>
+            <li class="nav__item"><a class="link" href="/">Home</a></li>
+            <li class="nav__item"><a class="link" href="#">Favorites</a></li>
+            <li class="nav__item"><a class="link" href="https://www.linkedin.com/in/tuflihun/">About Us</a></li>
             <!-- <li class="nav__item">
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
             </li> -->
         </ul>
-
     </nav>
 
-    <!-- <div class="topnav" id="myTopnav">
-        <a class="active" href="/">Kasnaran</a>
-        <a href="/">Home</a>
-        <a href="#">Favorites</a>
-        <a href="https://www.linkedin.com/in/tuflihun/">About Us</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
-        <div class="right">
-            <input type="text" placeholder="Search..">
-        </div>
-    </div> -->
-
     <main>
-        <div class="hero">
+        <div class="hero" title="Hero Food">
             <div class="hero__inner">
                 <h1 class="ml14">
                     <span class="text-wrapper">
-                        <span class="letters">“You don’t need a silver fork to eat good food.”</span>
+                        <span tabindex="0" class="letters">“You don’t need a silver fork to eat good food.”</span>
                         <span class="line"></span>
                     </span>
                 </h1>
-                <h1 class="ml3">- Paul Prudhomme</h1>
+                <h1 tabindex="0" class="ml3">- Paul Prudhomme</h1>
             </div>
         </div>
 
-        <h1 class="posts__header">Our Resaturant</h1>
+        <h1 tabindex="0" class="posts__header">Our Resaturant</h1>
         <div class="posts">
         </div>
-        <!-- <div class="card">
-            <div class="card__image"><img src="https://dicoding-restaurant-api.el.r.appspot.com/images/medium/07"
-                    alt="Gambar Rempah-Rempah"></div>
-            <div class="card__content">
-                <div class="card__title">Bring Your Phone Cafe</div>
-                <div class="card__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus suscipit amet
-                    iusto nam, eum ab debitis, sint ratione eius neque aliquid, nulla eaque ducimus nesciunt totam
-                    inventore impedit corrupti quas!</div>
-            </div>
-        </div> -->
-
     </main>
     <footer class="footer">
         <div class="container">
             <div class="child">
-                <p>Copyright © 2021 Kasnaran</p>
+                <p tabindex="0">Copyright © 2021 Kasnaran</p>
             </div>
             <div class="child2">
-                <p>by Arksana Studio</p>
+                <a href="https://github.com/Leguna">by Arksana Studio</a>
             </div>
         </div>
 

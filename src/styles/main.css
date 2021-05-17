@@ -71,7 +71,6 @@ body {
 }
 
 .header__inner {
-  width: 100%;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -86,10 +85,14 @@ body {
 }
 
 .header__menu {
+  background-color: #363062;
   font-size: 32px;
-  margin: 10px auto;
+  padding: 0.2em;
   display: block;
-  width: 30px;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: white;
 }
 
@@ -158,6 +161,7 @@ body {
 
 .hero .hero__inner {
   margin: 0 auto;
+  padding: 2em;
   max-width: 900;
 }
 
@@ -238,15 +242,14 @@ main {
  * post
  */
 .posts {
-  padding: 32px 16px;
-  width: 100%;
+  padding: 0px 16px 16px 16px;
   text-align: center;
 }
 
 .posts__header {
   text-align: center;
   color: #4d4c7d;
-  padding: 32px 0px 0px 32px;
+  padding: 32px;
 }
 
 .posts__label {
@@ -288,7 +291,6 @@ main {
 
 .post-item__date {
   font-size: 12px;
-  letter-spacing: 8px;
   text-transform: uppercase;
   color: white;
 }
@@ -369,7 +371,8 @@ footer .child .child2 {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  margin-left: 1px;
+  margin: 0px;
+  padding: 0px;
 }
 
 footer .child2 {
@@ -377,22 +380,9 @@ footer .child2 {
   color: #cacaca;
 }
 
-footer ul {
-  margin: 0 auto;
-  display: inline-block;
-}
-
-footer li {
-  display: inline-block;
-  margin: 0 1em;
-  font-size: 14px;
-}
-
-footer a {
-  display: inline-block;
-  padding: 1.3em;
+footer .child2 a {
+  color: #cacaca;
   text-decoration: none;
-  color: #fff;
 }
 
 .ml14 {
@@ -430,4 +420,3 @@ footer a {
   font-weight: 200;
   font-size: 1.6em;
 }
-/*# sourceMappingURL=main.css.map */
