@@ -11,6 +11,7 @@ const hero = document.querySelector('.hero');
 const main = document.querySelector('main');
 const drawer = document.querySelector('#drawer');
 const post = document.querySelector('.posts');
+const postItem = '.post-item';
 
 menu.addEventListener('click', function (event) {
     drawer.classList.toggle('open');
@@ -36,8 +37,8 @@ restaurants.forEach(res => {
 function addPost(res) {
     var card = "";
     card +=  `
-    <article class='post-item'>
-    <img class='post-item__thumbnail' src='`+res.pictureId+`'
+    <article class='post-item' id='`+res.id+`' tabindex='0'>
+    <img tabindex='0' class='post-item__thumbnail' src='`+res.pictureId+`'
         alt='Gambar `+res.name+`'>
     <div class='post-item__content'>
         <p tabindex='0' class='post-item__date'>
@@ -47,15 +48,15 @@ function addPost(res) {
             <span class="fa fa-star`+((Math.round(res.rating)>3)?` checked`:``)+`"></span>
             <span class="fa fa-star`+((Math.round(res.rating)>4)?` checked`:``)+`"></span>
         </p>
-        <h1 class='post-item__title'><a href='#'>`+res.name+`</a></h1>
-        <h1 class='post-item__subtitle'><a href='#'>`+res.city+`</a></h1>
+        <h1 class='post-item__title'><p tabindex='0' href='#'>`+res.name+`</p></h1>
+        <h1 class='post-item__subtitle'><p tabindex='0' href='#'>`+res.city+`</p></h1>
         <p tabindex='0' class='post-item__description'>`+res.description.slice(0, 500)+(res.description.length>500?'...':'')+`</p>
     </div>
 </article>`;
     return card;
 }
 
-$('.post-item').mouseenter(function () { 
+$(postItem).mouseenter(function () { 
 anime({
     targets: this,
     scale: 1.05
@@ -67,6 +68,12 @@ $('.post-item').mouseleave(function () {
         targets: this,
         scale: 1
       });
+});
+
+$(postItem).on('click', function () {
+    //Detail Restaurant
+    location.href = '#'+$(this).attr('id');
+    // location.href = $(this).attr('id');
 });
 
 

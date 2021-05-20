@@ -6,6 +6,11 @@ html body {
   height: 100%;
 }
 
+a {
+  min-width: 44px;
+  min-height: 44px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -23,7 +28,6 @@ body {
   position: absolute;
   top: -40px;
   left: 0;
-  background-color: #bf1722;
   color: white;
   padding: 8px;
   z-index: 100;
@@ -298,12 +302,12 @@ main {
   opacity: 0.5;
 }
 
-.post-item__subtitle a {
+.post-item__subtitle p {
   text-decoration: none;
   color: #e6e6e6;
 }
 
-.post-item__title a {
+.post-item__title p {
   text-decoration: none;
   color: inherit;
 }
