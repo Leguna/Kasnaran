@@ -1,5 +1,6 @@
 @import 'MyStyle';
 
+
 .posts {
     display: grid;
     grid-template-columns: 1fr;
@@ -20,6 +21,10 @@
 
 @media screen and (min-width: 1200px) {
     .content {
+        max-width: 1200px;
+    }
+
+    .restaurantDetail {
         max-width: 1200px;
     }
 

@@ -8,23 +8,24 @@ class RestaurantDBSource {
   }
 
   static async detailRestaurant (id) {
-    const response = await fetch(API_ENDPOINT.DETAIL(id))
+    const response = await fetch(API_ENDPOINT.DETAIL_RESTAURANT(id))
     return response.json()
   }
 
-  static async searchRestaurant (id) {
-    const response = await fetch(API_ENDPOINT.DETAIL(id))
+  static async searchRestaurant (query) {
+    const response = await fetch(API_ENDPOINT.SEARCH_RESTAURANT(query))
     return response.json()
   }
 
-  static async addNewReview (id, name, review) {
-    const response = await fetch(API_ENDPOINT.DETAIL(id), {
+  static async addNewReview (review) {
+    const response = await fetch(API_ENDPOINT.ADD_NEW_REVIEW, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Accept: 'application/json',
         'X-Auth-Token': '12345'
       },
-      body: `{"id" : ${id}, "name" : ${name}, "review" : ${review} }`
+      body: JSON.stringify(review)
     })
     return response.json()
   }
