@@ -25,6 +25,9 @@ body {
 }
 
 .skip-link {
+  background-color: #363062;
+  min-width: 44px;
+  min-height: 44px;
   position: absolute;
   top: -40px;
   left: 0;

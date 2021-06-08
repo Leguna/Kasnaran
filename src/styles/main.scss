@@ -27,6 +27,9 @@ body {
 
 // Skip Link
 .skip-link {
+    background-color: $color1;
+    min-width: 44px;
+    min-height: 44px;
     position: absolute;
     top: -40px;
     left: 0;
