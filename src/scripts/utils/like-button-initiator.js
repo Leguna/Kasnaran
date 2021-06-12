@@ -42,6 +42,7 @@ const LikeButtonInitiator = {
     likeButton.addEventListener('click', async () => {
       await FavoriteRestaurantDB.deleteRestaurant(this._restaurant.id)
       this._renderButton()
+      this.focus()
     })
   }
 }

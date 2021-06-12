@@ -25,12 +25,10 @@ body {
 }
 
 .skip-link {
-  background-color: #363062;
-  min-width: 44px;
-  min-height: 44px;
   position: absolute;
   top: -40px;
   left: 0;
+  background-color: #363062;
   color: white;
   padding: 8px;
   z-index: 100;
@@ -282,6 +280,7 @@ body {
   font-size: 12px;
   text-transform: uppercase;
   color: white;
+  margin-bottom: 1em;
 }
 
 .post-item__date__author {
@@ -290,9 +289,12 @@ body {
 }
 
 .post-item__title {
+  color: inherit;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 16pt;
   margin-top: 16px;
+  min-width: 44px;
+  min-height: 44px;
   -webkit-transition: 0.3s opacity;
   transition: 0.3s opacity;
 }

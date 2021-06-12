@@ -58,9 +58,18 @@
 }
 
 .poster .likeContainer .likeRound {
+  min-width: 44px;
+  min-height: 44px;
+  width: 1.5em;
+  height: 1.5em;
   right: 0;
   z-index: 1;
   position: absolute;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  margin: 1em;
+  -webkit-transform: translate(-100%, -150%);
+          transform: translate(-100%, -150%);
 }
 
 .poster .likeContainer i {
@@ -69,14 +78,12 @@
   padding: 0.3em;
   background-color: white;
   border-radius: 50%;
+  color: red;
+  font-size: 32pt;
   text-align: center;
   vertical-align: middle;
   display: table-cell;
   text-align: center;
-  color: red;
-  font-size: 32pt;
-  -webkit-transform: translate(-50%, -70%);
-          transform: translate(-50%, -70%);
 }
 
 .poster .restaurant__detail {

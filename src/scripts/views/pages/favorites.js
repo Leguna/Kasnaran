@@ -5,7 +5,7 @@ import anime from 'animejs/lib/anime.es.js'
 const ListRestaurant = {
   async render () {
     return `
-           <div class="content">
+           <div id="content" class="content" tabindex="0">
             <h1 tabindex="0" class="posts__header">Liked Resaturant</h1>
             <div class="posts">
             </div>

@@ -24,13 +24,22 @@ class App {
     const url = UrlParser.parseActiveUrlWithCombiner()
     const page = routes[url]
 
-    this._skipToContent.addEventListener('click', () => {
-      this._content.scrollIntoView({
-        behavior: 'smooth'
-      })
-    })
     this._content.innerHTML = await page.render()
     await page.afterRender()
+
+    const article = document.querySelector('#content') || this._content
+
+    const content = document.getElementById('content')
+
+    // console.log(content)
+    // this._skipToContent.href = '#content'
+    this._skipToContent.addEventListener('click', () => {
+      console.log(article)
+      article.scrollIntoView({
+        behavior: 'smooth'
+      })
+      content.focus()
+    })
   }
 }
 
