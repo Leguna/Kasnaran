@@ -17,7 +17,7 @@ const ListRestaurant = {
             </div>
         </div>
 
-        <div class="content">
+        <div id="content" class="content" tabindex="0">
             <h1 tabindex="0" class="posts__header">Our Resaturant</h1>
             <div class="posts">
             </div>
@@ -53,9 +53,9 @@ const ListRestaurant = {
         })
       })
 
-      postItem.addEventListener('click', () => {
-        location.href = `#/detail/${postItem.getAttribute('id')}`
-      })
+      // postItem.addEventListener('click', () => {
+      //   location.href = `#/detail/${postItem.getAttribute('id')}`
+      // })
     }
 
     // Hero

@@ -8,7 +8,7 @@ import LikeButtonInitiator from '../../utils/like-button-initiator'
 const Detail = {
   async render () {
     return `
-      <div id="mainContent" class="restaurant"></div>
+      <div id="content" class="restaurant" tabindex="0"></div>
       <div id="likeButtonContainer"></div>
     `
   },
@@ -35,7 +35,6 @@ const Detail = {
       const review = { id: restaurant.id, name: inputNama, review: inputReview }
       console.log(review)
       await RestaurantDbSource.addNewReview(review).then(async (value) => {
-        console.log(value)
         if (!value.error) {
           const url = UrlParser.parseActiveUrlWithoutCombiner()
           const restaurant = await RestaurantDbSource.detailRestaurant(url.id).then(value => value.restaurant)

@@ -30,6 +30,7 @@ body {
     position: absolute;
     top: -40px;
     left: 0;
+    background-color: $color1;
     color: white;
     padding: 8px;
     z-index: 100;
@@ -278,6 +279,7 @@ body {
     font-size: 12px;
     text-transform: uppercase;
     color: white;
+    margin-bottom: 1em;
 }
 
 .post-item__date__author {
@@ -286,10 +288,13 @@ body {
 }
 
 .post-item__title {
+    color: inherit;
     font-weight: 500;
-    font-size: 16px;
     margin-top: 16px;
+    min-width: 44px;
+    min-height: 44px;
     transition: 0.3s opacity;
+    font-size: 28pt;
 }
 
 .post-item__subtitle {

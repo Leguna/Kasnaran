@@ -63,10 +63,24 @@
     .likeContainer {
 
         .likeRound {
+            min-width: 44px;
+            min-height: 44px;
+            width: 1.5em;
+            height: 1.5em;
             right: 0;
             z-index: 1;
             position: absolute;
+            border: none;
+            background-color: rgba(255,
+                    255,
+                    255,
+                    0);
 
+
+            margin: 1em;
+
+
+            transform: translate(-100%, -150%);
         }
 
         i {
@@ -75,16 +89,12 @@
             padding: 0.3em;
             background-color: white;
             border-radius: 50%;
-
+            color: red;
+            font-size: 32pt;
             text-align: center;
             vertical-align: middle;
             display: table-cell;
             text-align: center;
-
-            color: red;
-            font-size: 32pt;
-
-            transform: translate(-50%, -70%);
         }
     }
 
