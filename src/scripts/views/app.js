@@ -2,6 +2,9 @@ import DrawerInitiator from '../utils/drawer-initiator'
 import routes from '../routes/routes'
 import UrlParser from '../routes/url-parser'
 
+import '../../styles/main.scss'
+import '../../styles/responsive.scss'
+import '../../styles/detail.scss'
 class App {
   constructor ({ button, drawer, content, skipToContent }) {
     this._button = button
@@ -31,8 +34,6 @@ class App {
 
     const content = document.getElementById('content')
 
-    // console.log(content)
-    // this._skipToContent.href = '#content'
     this._skipToContent.addEventListener('click', () => {
       console.log(article)
       article.scrollIntoView({
