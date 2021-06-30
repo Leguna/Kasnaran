@@ -1,204 +1,207 @@
 @import 'MyStyle.scss';
 
 .detailContainer {
-    width: 100%;
-    padding: 16px;
-    margin: auto;
-    display: grid;
-    color: white;
+  width: 100%;
+  padding: 16px;
+  margin: auto;
+  display: grid;
+  color: white;
 }
 
 .poster {
-    border-radius: 2em;
+  border-radius: 2em;
+  width: 100%;
+  background-color: $color2;
+  max-width: 60em;
+  margin: 1em auto;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+
+  img {
     width: 100%;
-    background-color: $color2;
-    max-width: 60em;
-    margin: 1em auto;
-    position: relative;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    border-radius: 2em 2em 0 0;
+  }
 
-    img {
-        width: 100%;
-        border-radius: 2em 2em 0 0;
+  .gambar {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 2em;
+  }
+
+  .review {
+    min-width: 100px;
+    min-height: 50px;
+    width: 10em;
+    height: 8em;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+
+    border-radius: 0 2em 0 2em;
+    padding: 1em;
+
+    i {
+      font-size: small;
+      color: rgb(255, 174, 0);
     }
 
-    .gambar {
-        width: 100%;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        border-radius: 2em;
-    }
-
-    .review {
-        min-width: 100px;
-        min-height: 50px;
-        width: 10em;
-        height: 8em;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.7);
-        position: absolute;
-
-        border-radius: 0 2em 0 2em;
-        padding: 1em;
-
-        i {
-            font-size: small;
-            color: rgb(255, 174, 0);
-        }
-
-        p {
-            font-size: 20pt;
-            font-weight: 600;
-            text-align: center;
-
-        }
-
-        .white {
-            color: white;
-        }
+    p {
+      font-size: 20pt;
+      font-weight: 600;
+      text-align: center;
 
     }
 
-
-    .likeContainer {
-
-        .likeRound {
-            min-width: 44px;
-            min-height: 44px;
-            width: 1.5em;
-            height: 1.5em;
-            right: 0;
-            z-index: 1;
-            position: absolute;
-            border: none;
-            background-color: rgba(255,
-                    255,
-                    255,
-                    0);
-
-
-            margin: 1em;
-
-
-            transform: translate(-100%, -150%);
-        }
-
-        i {
-            box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.6);
-
-            padding: 0.3em;
-            background-color: white;
-            border-radius: 50%;
-            color: red;
-            font-size: 32pt;
-            text-align: center;
-            vertical-align: middle;
-            display: table-cell;
-            text-align: center;
-        }
+    .white {
+      color: white;
     }
 
-    .restaurant__detail {
-        font-size: 16pt;
-        padding: 16px;
+  }
 
-        .categories {
-            width: 100%;
-            margin: 0;
-            font-size: small;
-            font-weight: 600;
-        }
 
-        .category {
-            display: inline-block;
-            background-color: $color3;
-            width: fit-content;
-            padding: 12px;
-            margin-top: 8px;
+  .likeContainer {
 
-            margin-right: 8px;
-            border-radius: 1em;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-        }
+    .likeRound {
+      min-width: 44px;
+      min-height: 44px;
+      width: 1.5em;
+      height: 1.5em;
+      right: 0;
+      z-index: 1;
+      position: absolute;
+      border: none;
+      background-color: rgba(255,
+          255,
+          255,
+          0);
 
-        .reviewUser {
-            padding-left: 8px;
 
-            .reviewText {
-                border-bottom: 2px solid rgba(255, 255, 255, 0.226);
-                display: flex;
+      margin: 1em;
 
-                span {
-                    white-space: nowrap;
-                }
-            }
-        }
+
+      transform: translate(-100%, -150%);
     }
 
+    i {
+      box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.6);
 
-    .textTitle {
-        font-size: 10pt;
-        font-weight: 300;
-        color: $gray;
+      width: 50px;
+      height: 50px;
+
+      padding: 0.3em;
+      background-color: white;
+      border-radius: 50%;
+      color: red;
+      font-size: 32pt;
+      text-align: center;
+      vertical-align: middle;
+      display: table-cell;
+      text-align: center;
+    }
+  }
+
+  .restaurant__detail {
+    font-size: 16pt;
+    padding: 16px;
+
+    .categories {
+      width: 100%;
+      margin: 0;
+      font-size: small;
+      font-weight: 600;
     }
 
-    .textMain {
-        font-size: 14pt;
-        font-weight: 500;
-        padding-bottom: 16px;
+    .category {
+      display: inline-block;
+      background-color: $color3;
+      width: fit-content;
+      padding: 12px;
+      margin-top: 8px;
+
+      margin-right: 8px;
+      border-radius: 1em;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
     }
 
+    .reviewUser {
+      padding-left: 8px;
 
-    #menuItem {
-        margin-left: 8px;
+      .reviewText {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.226);
         display: flex;
 
-
-        border-bottom: 2px dotted white;
+        span {
+          white-space: nowrap;
+        }
+      }
     }
+  }
 
-    h4 {
-        padding-top: 1em;
-    }
+
+  .textTitle {
+    font-size: 10pt;
+    font-weight: 300;
+    color: $gray;
+  }
+
+  .textMain {
+    font-size: 14pt;
+    font-weight: 500;
+    padding-bottom: 16px;
+  }
+
+
+  #menuItem {
+    margin-left: 8px;
+    display: flex;
+
+
+    border-bottom: 2px dotted white;
+  }
+
+  h4 {
+    padding-top: 1em;
+  }
 }
 
 
 .reviewFormContainer {
-    background-color: rgba(255, 255, 255, 0.781);
-    padding-left: 0.5em;
+  background-color: rgba(255, 255, 255, 0.781);
+  padding-left: 0.5em;
+  border-radius: 2em;
+  display: flex;
+  flex-direction: row;
+  margin: 0.5em 0;
+
+  .reviewInputName {
+    border: none;
+    background-color: rgba(0,
+        0,
+        0,
+        0);
+    color: black;
+  }
+
+  .reviewTextArea {
+    color: black;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 60%;
+  }
+
+  button {
+    margin-left: auto;
+    min-width: 80px;
+    min-height: 50px;
+    margin-left: auto;
+    padding: 0.5em;
+    background-color: $color1;
+    border: none;
+    color: white;
     border-radius: 2em;
-    display: flex;
-    flex-direction: row;
-    margin: 0.5em 0;
-
-    .reviewInputName {
-        border: none;
-        background-color: rgba(0,
-                0,
-                0,
-                0);
-        color: black;
-    }
-
-    .reviewTextArea {
-        color: black;
-        background-color: rgba(0, 0, 0, 0);
-        border: none;
-        display: inline-block;
-        vertical-align: middle;
-
-        width: 60%;
-    }
-
-    button {
-        margin-left: auto;
-        min-width: 80px;
-        min-height: 50px;
-        margin-left: auto;
-        padding: 0.5em;
-        background-color: $color1;
-        border: none;
-        color: white;
-        border-radius: 2em;
-    }
+  }
 }

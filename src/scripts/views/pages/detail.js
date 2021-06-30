@@ -3,13 +3,13 @@ import UrlParser from '../../routes/url-parser'
 import RestaurantDbSource from '../../data/restaurant-source'
 import { createRestaurantDetailTemplate } from '../templates/template-creator'
 
-import LikeButtonInitiator from '../../utils/like-button-initiator'
+import LikeButtonInitiator from '../../utils/like-button-presenter'
+import FavoriteRestaurantDB from '../../data/favorite-restaurant-db'
 
 const Detail = {
   async render () {
     return `
       <div id="content" class="restaurant" tabindex="0"></div>
-      <div id="likeButtonContainer"></div>
     `
   },
 
@@ -18,6 +18,7 @@ const Detail = {
     document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
 
     const url = UrlParser.parseActiveUrlWithoutCombiner()
+
     const restaurant = await RestaurantDbSource.detailRestaurant(url.id).then(value => value.restaurant)
 
     const restaurantContainer = document.querySelector('.restaurant')
@@ -25,6 +26,7 @@ const Detail = {
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('.likeContainer'),
+      favoriteRestaurants: FavoriteRestaurantDB,
       restaurant: restaurant
     })
 
@@ -33,7 +35,7 @@ const Detail = {
       const inputReview = document.querySelector('#review-textarea').value
 
       const review = { id: restaurant.id, name: inputNama, review: inputReview }
-      console.log(review)
+      // console.log(review)
       await RestaurantDbSource.addNewReview(review).then(async (value) => {
         if (!value.error) {
           const url = UrlParser.parseActiveUrlWithoutCombiner()

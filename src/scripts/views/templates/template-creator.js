@@ -32,8 +32,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <div class="gambar">
         <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar Restaurant ${restaurant.name}" aria-label="Gambar ${restaurant.name}" tabindex="0">
 
-        <div class="likeContainer">
-        </div>
+        <div class="likeContainer"></div>
     </div>
 
     <div class="restaurant__detail">
@@ -89,17 +88,17 @@ const createRestaurantDetailTemplate = (restaurant) => `
 </div>
 `
 
-const createLikeButtonTemplate = () => ` 
-<button id="likeButton" class="likeRound"  aria-label="Favorite"><i class="fa fa-heart-o"></i></button>
+const createLikeRestaurantButtonTemplate = () => ` 
+<button id="likeButton" class="likeRound" aria-label="Favorite"><i class="fa fa-heart-o"></i></button>
 `
 
-const createLikedButtonTemplate = () => ` 
-<button id="likeButton" class="likeRound"  aria-label="Unfavorite"><i class="fa fa-heart"></i></button>
+const createUnlikeRestaurantButtonTemplate = () => ` 
+<button id="likeButton" class="likeRound" aria-label="Unfavorite"><i class="fa fa-heart"></i></button>
 `
 
 export {
   createRestaurantCardTemplate,
   createRestaurantDetailTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate
+  createLikeRestaurantButtonTemplate,
+  createUnlikeRestaurantButtonTemplate
 }
