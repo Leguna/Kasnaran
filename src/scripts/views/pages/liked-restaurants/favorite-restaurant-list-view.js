@@ -31,12 +31,6 @@ class FavoriteRestaurantListView {
   _getEmptyRestaurantTemplate () {
     document.querySelector('.posts__header').innerHTML = 'There is no favorite restaurant'
     return ''
-    // return `
-    //   <div id="content" class="content" tabindex="0">
-    //     <h1 tabindex="0" class="posts__header">There is no favorite restaurant</h1>
-    //     <div class="posts">
-    //     </div>
-    //   </div>`
   }
 }
 

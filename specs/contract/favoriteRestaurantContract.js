@@ -1,4 +1,8 @@
 const itActsAsFavoriteRestaurantModel = (favoriteRestaurant) => {
+  beforeEach(async () => {
+    await favoriteRestaurant.deleteAllRestaurant()
+  })
+
   it('should return the restaurant that has been added', async () => {
     favoriteRestaurant.putRestaurant({ id: 1 })
     favoriteRestaurant.putRestaurant({ id: 2 })

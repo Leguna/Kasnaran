@@ -6,7 +6,7 @@ describe('Liking A Restaurant', () => {
     document.body.innerHTML = '<div class="likeContainer"></div>'
   }
 
-  beforeEach(() => {
+  beforeEach(async () => {
     addLikeButtonContainer()
   })
 

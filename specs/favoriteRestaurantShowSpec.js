@@ -29,8 +29,7 @@ describe('Showing all favorite restaurants', () => {
 
     it('should show the information that no restaurants have been liked', (done) => {
       document.querySelector('.posts').addEventListener('restaurants:updated', () => {
-        console.log(document.querySelectorAll('.posts__header').innerHTML)
-        expect(document.querySelectorAll('.posts__header').innerHTML)
+        expect(document.querySelector('.posts__header').innerHTML)
           .toEqual('There is no favorite restaurant')
 
         done()
@@ -48,8 +47,8 @@ describe('Showing all favorite restaurants', () => {
 
   describe('When favorite restaurants exist', () => {
     it('should show the restaurants', (done) => {
-      document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
-        expect(document.querySelectorAll('.restaurant-item').length).toEqual(2)
+      document.querySelector('.posts').addEventListener('restaurants:updated', () => {
+        expect(document.querySelectorAll('.post-item').length).toEqual(2)
         done()
       })
 
@@ -63,7 +62,7 @@ describe('Showing all favorite restaurants', () => {
         }
       ])
 
-      FavoriteRestaurantShowPresenter({
+      new FavoriteRestaurantShowPresenter({
         view,
         favoriteRestaurants
       })

@@ -30,8 +30,10 @@ const FavoriteRestaurantArray = {
 
   deleteRestaurant (id) {
     favoriteRestaurants = favoriteRestaurants.filter((restaurant) => restaurant.id !== id)
+  },
+  deleteAllRestaurant () {
+    favoriteRestaurants = []
   }
-
 }
 
 describe('Favorite Restaurant Array Contract Test Implementation', () => {

@@ -1,7 +1,9 @@
 
 import CONFIG from '../../globals/config'
 
-const createRestaurantCardTemplate = (res) => `
+const createRestaurantCardTemplate = (res) => {
+    if(res.description==undefined) res.description='-'
+    return `
 <article class='post-item' id='${res.id}' tabindex='0'>
 <img tabindex='0' class='post-item__thumbnail' aria-label="Gambar" src='${CONFIG.BASE_IMAGE_URL + res.pictureId}'
     alt='Gambar ${res.name}'>
@@ -13,7 +15,7 @@ const createRestaurantCardTemplate = (res) => `
     <h1 class='post-item__subtitle'><p tabindex='0' href='#'>${res.city}</p></h1>
     <p tabindex='0' class='post-item__description'>${res.description.slice(0, 500) + (res.description.length > 500 ? '...' : '')}</p>
 </div>
-</article>`
+</article>`}
 
 const createRestaurantDetailTemplate = (restaurant) => ` 
 <div class="detailContainer">

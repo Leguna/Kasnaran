@@ -12,7 +12,7 @@ describe('Unliking A Restaurant', () => {
   })
 
   afterEach(async () => {
-    await FavoriteRestaurantIdb.deleteRestaurant(1)
+    await FavoriteRestaurantIdb.deleteAllRestaurant()
   })
 
   it('should display unlike widget when the restaurant has been liked', async () => {
