@@ -1,4 +1,6 @@
 import 'regenerator-runtime' /* for async await transpile */
+import 'lazysizes'
+import 'lazysizes/plugins/parent-fit/ls.parent-fit'
 
 import App from './views/app'
 import swRegister from './utils/sw-register'

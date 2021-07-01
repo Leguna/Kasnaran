@@ -5,8 +5,10 @@ const createRestaurantCardTemplate = (res) => {
   if (res.description === undefined) res.description = '-'
   return `
 <article class='post-item' id='${res.id}' tabindex='0'>
-<img tabindex='0' class='post-item__thumbnail' aria-label="Gambar" src='${CONFIG.BASE_IMAGE_URL + res.pictureId}'
+
+    <img width=0 height=0  tabindex='0' aria-label="Gambar" class='post-item__thumbnail lazyload' data-src='${CONFIG.BASE_IMAGE_URL + 'small/' + res.pictureId}'
     alt='Gambar ${res.name}'>
+
 <div class='post-item__content'>
     <p tabindex='0' class='post-item__date'>
       Rating: ${res.rating}
@@ -33,7 +35,11 @@ const createRestaurantDetailTemplate = (restaurant) => `
         </p>
     </div>
     <div class="gambar">
-        <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar Restaurant ${restaurant.name}" aria-label="Gambar ${restaurant.name}" tabindex="0">
+    <picture>
+        <source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + 'small/' + restaurant.pictureId}">
+        <source media="(max-width: 1200px)" srcset="${CONFIG.BASE_IMAGE_URL + 'medium/' + restaurant.pictureId}">
+        <img src="${CONFIG.BASE_IMAGE_URL + 'large/' + restaurant.pictureId}" alt="Gambar Restaurant ${restaurant.name}" aria-label="Gambar ${restaurant.name}" tabindex="0">
+    </picture>
 
         <div class="likeContainer"></div>
     </div>

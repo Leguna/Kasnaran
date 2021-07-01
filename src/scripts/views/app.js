@@ -5,6 +5,9 @@ import UrlParser from '../routes/url-parser'
 import '../../styles/main.scss'
 import '../../styles/responsive.scss'
 import '../../styles/detail.scss'
+// import '../../../node_modules/@fortawesome/fontawesome-free/js/all'
+// import '../../../node_modules/font-awesome/css/font-awesome.min.css'
+
 class App {
   constructor ({ button, drawer, content, skipToContent }) {
     this._button = button

@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --config webpack.prod.js",
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "karma start",
-    "e2e": "codeceptjs run --steps"
+    "e2e": "codeceptjs run --steps",
+    "build-image": "node sharp.js"
   },
   "keywords": [],
   "author": "Leguna <ahmadtuflihunxd@gmail.com>",
@@ -16,6 +18,7 @@
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "codeceptjs": "^3.0.7",
     "copy-webpack-plugin": "^6.0.3",
     "css-loader": "^3.6.0",
@@ -25,6 +28,9 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "html-webpack-plugin": "^4.3.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^6.0.1",
+    "imagemin-webpack-plugin": "^2.4.2",
     "jasmine-ajax": "^4.0.0",
     "jasmine-core": "^3.5.0",
     "karma": "^6.3.2",
@@ -37,6 +43,7 @@
     "puppeteer": "^10.1.0",
     "sass": "^1.35.1",
     "sass-loader": "^10.2.0",
+    "sharp": "^0.28.3",
     "style-loader": "^1.2.1",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
@@ -48,6 +55,7 @@
     "animejs": "^3.2.1",
     "idb": "^6.1.2",
     "jquery": "^3.6.0",
+    "lazysizes": "^5.3.2",
     "regenerator-runtime": "^0.13.5",
     "serviceworker-webpack-plugin": "^1.0.1"
   }
