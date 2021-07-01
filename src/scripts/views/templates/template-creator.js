@@ -6,7 +6,7 @@ const createRestaurantCardTemplate = (res) => {
   return `
 <article class='post-item' id='${res.id}' tabindex='0'>
 
-    <img width=0 height=0  tabindex='0' aria-label="Gambar" class='post-item__thumbnail lazyload' data-src='${CONFIG.BASE_IMAGE_URL + 'small/' + res.pictureId}'
+    <img width=0 height=0  tabindex='0' aria-label="Gambar" src='/images/placeholder.png' class='post-item__thumbnail lazyload' data-src='${CONFIG.BASE_IMAGE_URL + 'small/' + res.pictureId}'
     alt='Gambar ${res.name}'>
 
 <div class='post-item__content'>
