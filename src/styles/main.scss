@@ -1,6 +1,9 @@
 @import 'myStyle.scss';
 @import 'card.scss';
 
+$heroImgS: url('/images/heros/hero-image_4-small.jpg');
+$heroImgL: url('/images/heros/hero-image_4-large.jpg');
+
 html body {
     padding: 0;
     margin: 0;
@@ -126,13 +129,15 @@ body {
 
 @media screen and (max-width: 600px) {
     .hero {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/heros/hero-image_4-small.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            $heroImgS;
     }
 }
 
 @media screen and (min-width: 600px) {
     .hero {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/heros/hero-image_4-large.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            $heroImgL;
     }
 }
 
