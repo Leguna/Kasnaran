@@ -46,6 +46,7 @@
     "sharp": "^0.28.3",
     "style-loader": "^1.2.1",
     "webpack": "^4.46.0",
+    "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^5.0.9",
