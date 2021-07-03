@@ -15,8 +15,10 @@ const CacheHelper = {
 
   async revalidateCache (request) {
     const response = await caches.match(request)
-
     if (response) {
+      if (request.url.includes('detail')) {
+        return this._fetchRequest(request)
+      }
       return response
     }
     return this._fetchRequest(request)
@@ -27,8 +29,10 @@ const CacheHelper = {
   },
 
   async _fetchRequest (request) {
-    const response = await fetch(request)
-
+    let response
+    try { response = await fetch(request) } catch (e) {
+      response = await caches.match(request)
+    }
     if (!response || response.status !== 200) {
       return response
     }

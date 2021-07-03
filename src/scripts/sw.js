@@ -13,8 +13,6 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method === 'GET') {
-    if (event.request.url.includes('/detail/')) {
-      event.respondWith(CacheHelper._fetchRequest(event.request))
-    } else { event.respondWith(CacheHelper.revalidateCache(event.request)) }
+    event.respondWith(CacheHelper.revalidateCache(event.request))
   }
 })

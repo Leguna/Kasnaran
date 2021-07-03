@@ -1,6 +1,6 @@
 
 import CONFIG from '../../globals/config'
-
+import { findLongestWordLength } from '../../utils/stringLongest'
 const createRestaurantCardTemplate = (res) => {
   if (res.description === undefined) res.description = '-'
   return `
@@ -38,7 +38,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <picture>
         <source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + 'small/' + restaurant.pictureId}">
         <source media="(max-width: 1200px)" srcset="${CONFIG.BASE_IMAGE_URL + 'medium/' + restaurant.pictureId}">
-        <img src="${CONFIG.BASE_IMAGE_URL + 'large/' + restaurant.pictureId}" alt="Gambar Restaurant ${restaurant.name}" aria-label="Gambar ${restaurant.name}" tabindex="0">
+        <img  src='/images/placeholder.png' class='lazyload' width=auto height=auto  data-src="${CONFIG.BASE_IMAGE_URL + 'medium/' + restaurant.pictureId}" alt="Gambar Restaurant ${restaurant.name}" aria-label="Gambar ${restaurant.name}" tabindex="0">
     </picture>
 
         <div class="likeContainer"></div>
@@ -77,15 +77,23 @@ const createRestaurantDetailTemplate = (restaurant) => `
 
 
         <h4  tabindex="0" ><i class="fa fa-users"></i> Review</h4>
-        <div class="reviewFormContainer"> <input id="review-input" aria-label="Type your Name"
-                class="reviewInputName" placeholder="Type Your Name" type="text">
-            <textarea id="review-textarea" aria-label="Type your Review" class="reviewTextArea"
-                placeholder="This Restaurant is awesome!"></textarea> <button class="reviewButtonSubmit">Add
-                Review</button> </div>
+       
+        <div class="reviewInput">
+        
+        <input type="text"  class="reviewInputName" id="review-input" placeholder="Type Your Name">
+
+        <input type="text" id="review-textarea"  id="review-textarea" aria-label="Type your Review" class="reviewTextArea"
+        placeholder="This Restaurant is awesome!"></input>
+    
+        <input class="reviewButtonSubmit" type="submit" value="Submit">
+    
+        </div>
+
         <div class="reviewUser">
             ${restaurant.customerReviews.reverse().map((value) => {
+                if (findLongestWordLength(value.review) > 15) return ''
             return (value.name !== '' && value.name !== undefined)
-            ? ` <p class="reviewText"  tabindex="0" >${value.name}: ${value.review}<span
+            ? ` <p class="reviewText"  tabindex="0" >${value.name}:` + value.review + `<span class="reviewDateText"
                     style="margin-left: auto; padding-left: 1em;" >${value.date}</span></p>`
             : ''
             }).join('')}

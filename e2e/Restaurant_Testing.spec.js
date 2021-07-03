@@ -41,7 +41,7 @@ Scenario('reviewing restaurant', async ({ I }) => {
 
   I.seeElement('.post-item__title')
 
-  const firstRestaurant = locate('.post-item__title').last()
+  const firstRestaurant = locate('.post-item__title').first()
 
   I.click(firstRestaurant)
 
@@ -58,7 +58,6 @@ Scenario('reviewing restaurant', async ({ I }) => {
   I.click('.reviewButtonSubmit')
   I.refreshPage()
   I.seeElement('.reviewButtonSubmit')
-  I.refreshPage()
 
   const currentReview = locate('.reviewText').first()
   const currentReviewText = await I.grabTextFrom(currentReview)
