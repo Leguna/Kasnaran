@@ -13,7 +13,7 @@ Scenario('showing empty liked restaurants', ({ I }) => {
   I.see('There is no favorite restaurant', '.posts__header')
 })
 
-Scenario('liking one restaurant', async ({ I }) => {
+Scenario('liking one restaurant and unlike it', async ({ I }) => {
   I.see('There is no favorite restaurant', '.posts__header')
 
   I.amOnPage('/')
@@ -34,6 +34,15 @@ Scenario('liking one restaurant', async ({ I }) => {
   const likedRestaurantTitle = await I.grabTextFrom('.post-item__title')
 
   assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle)
+
+  const firstRestaurantFav = locate('.post-item__title').first()
+  I.click(firstRestaurantFav)
+
+  I.seeElement('#likeButton')
+  I.click('#likeButton')
+
+  I.amOnPage('/#/favorites')
+  I.see('There is no favorite restaurant', '.posts__header')
 })
 
 Scenario('reviewing restaurant', async ({ I }) => {
