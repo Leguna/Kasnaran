@@ -1,4 +1,6 @@
-# Kasnaran | kasnaran.tuflihun.site
+# Kasnaran
+
+[Link Website](kasnaran.tuflihun.site)
 
 Website Restaurant Catalog
 For Dicoding Submission.
